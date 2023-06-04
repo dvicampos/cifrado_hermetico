@@ -49,7 +49,6 @@ for i in range(n):
 palabra = input("Ingrese una palabra: ")
 numlettras = len(palabra)
 
-#PARA PODER MOSTRAR SOLO LAS LETRAS DEL MENSAJE
 M = []
 for i in range(n):
     fila = []
@@ -57,16 +56,12 @@ for i in range(n):
         fila.append(' ')
     M.append(fila)
 
-#SUSTITUIR LA LETRAS DE NUESTRO MENSAJE TOMANDO COMO BASE LA MATRIZ QUE SE LLENO DE LOS VALORES DEL JSON
 archivo = open("desencriptacion.txt", "w")
 for a in range(numlettras):
     i = random.randint(0, n-1)
     j = random.randint(0, n-1)
-    # GUADAR EN LA MATRIZ PRINCIPAL
     matriz[i][j] = palabra[a]
-    # GUADAR EN LA MATRIZ PARA MOSTRAR LA POSICION
     M[i][j] = palabra[a]
-    # print(f"Las coordenadas de {a} son: {i+1} | {j+1}")
     coordenadas = (f"Las coordenadas de {palabra[a]} son: {i+1} | {j+1} \n")
     archivo.write(coordenadas)
 
