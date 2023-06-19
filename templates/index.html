@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodo hermetico</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  <h1 class="titulo">CIFRADO HERMETICO</h1>
+  <form class="formulario" action="/" method="POST">
+    <label for="palabra">Ingrese una palabra:</label>
+    <input class="entrada" type="text" id="palabra" name="palabra" value="{{ palabra }}" />
+    <button class="boton" type="submit">Encriptar</button>
+  </form>
+
+  <div class="container">
+    <table class="encriptacion">
+      <caption class="subtitulo">MENSAJE CIFRADO</caption>
+      {% for fila in matriz %}
+      <tr>
+        {% for elemento in fila %}
+        <td>{{ elemento }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+    <div>
+      {{ coordenadas | safe }}
+    </div>
+    
+    <table class="desencriptación">
+      <caption class="subtitulo">MENSAJE DE TRANSPOSICION</caption>
+      {% for fila in M %}
+      <tr>
+        {% for elemento in fila %}
+        <td>{{ elemento }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% if adivinar %}
+  <div class="alert">{{ mensaje }}</div>
+  {% endif %}
+
+  <form class="formulario" onsubmit="adivinarPalabra(event)">
+    <input type="hidden" id="palabra" value="{{ palabra }}">
+    <label for="respuesta">¿Cuáles son las coordenadas?</label>
+    <input class="entrada" type="text" id="respuesta">
+    <button class="boton" type="submit">Adivinar</button>
+  </form>
+  <div id="mensaje-container"></div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
+

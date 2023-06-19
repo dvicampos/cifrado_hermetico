@@ -1,0 +1,80 @@
+body{
+    background: url(../images/back.jpg);
+    background-repeat: initial;
+    color: aliceblue;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.titulo{
+    text-align: center;
+}
+.subtitulo{
+    /* margin-top: -50px; */
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin: 15px;
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.boton{
+    width: 100px;
+    background-color: #b1980c;
+    color: #f8f8f8;
+    padding: 8px;
+}
+.boton:hover{
+    background-color: #f8f8f8;
+    color: #b1980c;
+    cursor: pointer;
+}
+label{
+    margin: 15px 0;
+    font-size: 20px;
+}
+.encriptacion{
+    background-color: rgb(4, 3, 63);
+    position: relative;
+    
+}
+.desencriptación{
+    background-color: rgb(1, 1, 9);
+    border: 1px solid #f8f8f8;
+}
+table{
+    margin: 10px 10px;
+}
+thead{
+    background: #555;
+    color: white;
+    font-weight: bold;
+}
+td,th{
+    border: 1px solid #46751b;
+    /* border: 1px solid #75f300; */
+    padding: 5px 5px;
+    width: 5px;
+}
+.entrada{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px ;
+    width: 50%;
+}
+#mensaje-container{
+    font-size: 50px;
+    text-align: center;
+}
+.coordenadas{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+  
